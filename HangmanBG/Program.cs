@@ -157,7 +157,7 @@ namespace HangmanBG
         {
             if(lives == 5)
             {
-                Console.WriteLine($"You have {lives} life points \n");
+                Console.WriteLine($"You have {lives} life points");
             }       
 
             if (lives < 5)
@@ -172,7 +172,7 @@ namespace HangmanBG
         }
         static string GetInput()
         {
-            Console.WriteLine("Enter the letter or the word:");
+            Console.WriteLine("\nEnter the letter or the word:");
             string input = Console.ReadLine();
             input = input.ToUpper();
             guessingCount++;
