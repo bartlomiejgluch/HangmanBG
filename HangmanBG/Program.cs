@@ -155,6 +155,10 @@ namespace HangmanBG
         }
         static void PromptPlayer()
         {
+            if(lives == 5)
+            {
+                Console.WriteLine($"You have {lives} life points");
+            }
             if (lives < 5)
             {
                 Console.WriteLine(status[lives]);
