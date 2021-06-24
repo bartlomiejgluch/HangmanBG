@@ -22,7 +22,8 @@ namespace HangmanBG
         static int guessingCount;
         static int guessing_time;
         static string score;
-        static string patchToScore;
+        static string pathToScore;
+        static string pathToCauntriesAndCapitals;
         static List<ScoreBoard> scoreBoardList = new List<ScoreBoard>();
 
 
@@ -77,10 +78,10 @@ namespace HangmanBG
 
         static void Main(string[] args)
         {
-            string patch = @"C:\Users\bartlomiej\Desktop\Motorola Academy - Recruitment Task\HangmanBG\HangmanBG\Resources\countries_and_capitals.txt";
-            patchToScore = @"C:\Users\bartlomiej\Desktop\Motorola Academy - Recruitment Task\HangmanBG\HangmanBG\Resources\score_board.txt";
+            pathToCauntriesAndCapitals = @"C:\Users\bartlomiej\Desktop\Motorola Academy - Recruitment Task\HangmanBG\HangmanBG\Resources\countries_and_capitals.txt";
+            pathToScore = @"C:\Users\bartlomiej\Desktop\Motorola Academy - Recruitment Task\HangmanBG\HangmanBG\Resources\score_board.txt";
 
-                LoadDataToArraysFromFile(patch);
+                LoadDataToArraysFromFile(pathToCauntriesAndCapitals);
                 Launch();
         
         }
@@ -234,7 +235,7 @@ namespace HangmanBG
                 Console.WriteLine($"You guessed the capital after {guessingCount} entries. It took you {guessing_time} seconds");
                 Console.WriteLine(" ");
                 Console.WriteLine(status[lives]);
-                AddScore(patchToScore);
+                AddScore(pathToScore);
                 ShowEndScreen();
             }
         }
@@ -311,7 +312,7 @@ namespace HangmanBG
 
         static void showTenBestResult() {
 
-           string[] temp  = System.IO.File.ReadAllLines(patchToScore);
+           string[] temp  = System.IO.File.ReadAllLines(pathToScore);
             int result1=0;
             int result2 = 0;
             for (int i = 0; i < temp.Length; i++)
