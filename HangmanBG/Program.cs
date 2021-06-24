@@ -192,7 +192,7 @@ namespace HangmanBG
                 }
                 Console.Clear();
             }
-            else
+            else if (input.Length > 1)
             {
                 if (word == input)
                 {
@@ -214,6 +214,7 @@ namespace HangmanBG
                 }
                 Console.Clear();
             }
+            Console.Clear();
         }
         static void CheckGameOver()
         {
